@@ -1,8 +1,11 @@
-from questions import questions
+class question:
+    def __init__(self, prompt, answer):
+        self.prompt = prompt
+        self.answer = answer
 
-print("Only Type a or b or c")
+print("Enter a or b or c only")
 
-question_prompts = [
+question_list = [
     "Largest Software Company in the world - \n" "a. Microsoft\n" "b. IBM\n" "c. Banglalink\n\n",
     "Creator of Facebook - \n" "a. Mark Abulburg\n" "b. Mark Rohimburg\n" "c. Mark Zuckerburg\n\n",
     "Top search engine - \n" "a. Duckduckgo\n" "b. Google\n" "c. Bing\n\n",
@@ -10,20 +13,21 @@ question_prompts = [
     "Computer understand - \n" "a. 0 & 1\n" "b. 1 & 2\n" "c. 4 & 0\n\n",
 ]
 
-question = [
-    questions(question_prompts[0], "a"),
-    questions(question_prompts[1], "c"),
-    questions(question_prompts[2], "b"),
-    questions(question_prompts[3], "a"),
-    questions(question_prompts[4], "a"),
+questions = [
+    question(question_list, "a"),
+    question(question_list, "c"),
+    question(question_list, "b"),
+    question(question_list, "a"),
+    question(question_list, "a"),
 ]
-def run_test(question):
-    score = 0
-    for questions in question:
-        answer = input(questions.prompt)
-        if answer == (questions.answer):
-            score += 1
-    print("YOU GOT " + str(score) + " OUT OF " + str(len(question)))
 
+def run_test (question):
+    score = 0
+    for question in questions:
+        answer = input(question.prompt)
+        if answer == answer.prompt:
+        score += 1
+
+    print ("YOU GOT " + str(score) + " OUT OF " + str(len(questions)))
 
 run_test(question)
